@@ -4,5 +4,5 @@ import com.tuspacio.models.Colaborador;
 
 public class ColaboradorDao {
 
-    public void registrarColaborador (Colaborador )
+   // public void registrarColaborador (Colaborador )
 }
