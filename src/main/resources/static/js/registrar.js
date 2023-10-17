@@ -8,10 +8,8 @@ async function registrarUsuario(){
     datos.password = document.getElementById("txtPasswordReg").value;
     let txtRepetirPassword = document.getElementById("txtRepetirPasswordReg")
 
-    if(datos.password !== txtPasswordReg){
+    if(datos.password !== txtRepetirPassword){
         alert("Las contraseñas son diferentes");
         return;
     }
-
-
 }
