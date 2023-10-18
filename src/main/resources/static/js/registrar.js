@@ -6,7 +6,7 @@ async function registrarUsuario(){
     datos.apellido = document.getElementById("txtApellidoReg").value;
     datos.email = document.getElementById("txtEmailReg").value;
     datos.password = document.getElementById("txtPasswordReg").value;
-    let txtRepetirPassword = document.getElementById("txtRepetirPasswordReg")
+    let txtRepetirPassword = document.getElementById("txtRepetirPasswordReg").value;
 
     if(datos.password !== txtRepetirPassword){
         alert("Las contraseñas son diferentes");
