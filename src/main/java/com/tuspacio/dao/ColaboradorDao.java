@@ -2,7 +2,10 @@ package com.tuspacio.dao;
 
 import com.tuspacio.models.Colaborador;
 
-public class ColaboradorDao {
+import java.util.List;
 
-   // public void registrarColaborador (Colaborador )
+public interface ColaboradorDao {
+
+     List<Colaborador> getColaborador ();
+     void registrarColaborador (Colaborador colaborador);
 }
