@@ -1,6 +1,7 @@
 package com.tuspacio.dao;
 
 import com.tuspacio.models.Colaborador;
+
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +13,10 @@ public class ColaboradorDaoImp implements ColaboradorDao{
 
     public List<Colaborador> getColaborador() {
         return null;
+
+    }
+    @Override
+    public void registrarColaborador(Colaborador colaborador) {
+
     }
 }
