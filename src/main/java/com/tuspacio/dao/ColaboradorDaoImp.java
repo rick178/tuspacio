@@ -23,6 +23,6 @@ public class ColaboradorDaoImp implements ColaboradorDao{
 
     @Override
     public void registrarColaborador (Colaborador colaborador){
-
+        entityManager.merge(colaborador);
     }
 }
