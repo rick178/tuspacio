@@ -23,6 +23,12 @@ public class ColaboradorDaoImp implements ColaboradorDao{
 
     @Override
     public void registrarColaborador (Colaborador colaborador){
-        entityManager.merge(colaborador);
+        System.out.println("Entrando a ColaboradorDao");
+        try {
+            entityManager.merge(colaborador);
+            System.out.println("Se inserto el colaborador correctamente");
+        }catch(Error error){
+            System.out.println("ColaboradorDaoImp Error: " + error);
+        }
     }
 }

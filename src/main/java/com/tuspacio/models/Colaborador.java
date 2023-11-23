@@ -23,5 +23,7 @@ public class Colaborador {
     private String emailColab;
     @Getter @Setter @Column(name="telefono_colab")
     private String telefonoColab;
+    @Getter @Setter @Column(name="pwd_colab")
+    private String pwdColab;
 
 }
