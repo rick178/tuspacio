@@ -16,7 +16,12 @@ public class ColaboradorDaoImp implements ColaboradorDao{
 
     }
     @Override
+<<<<<<< HEAD
     public void registrarColaborador(Colaborador colaborador) {
 
+=======
+    public void registrarColaborador (Colaborador colaborador){
+        entityManager.merge(colaborador);
+>>>>>>> 6497cf592f7e3c50d0a4eb38e9d8b3f0764dc4d8
     }
 }
