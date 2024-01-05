@@ -1,27 +1,34 @@
 package com.tuspacio.dao;
 
 import com.tuspacio.models.Colaborador;
-
-import jakarta.transaction.Transactional;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Repository
 @Transactional
-
 public class ColaboradorDaoImp implements ColaboradorDao{
 
-    public List<Colaborador> getColaborador() {
-        return null;
+    @PersistenceContext
+    EntityManager entityManager;
 
-    }
     @Override
-<<<<<<< HEAD
-    public void registrarColaborador(Colaborador colaborador) {
+    public List<Colaborador> getColaborador() {
+        String query = "FROM Colaborador";
+        return entityManager.createQuery(query).getResultList();
+    }
 
-=======
+    @Override
     public void registrarColaborador (Colaborador colaborador){
-        entityManager.merge(colaborador);
->>>>>>> 6497cf592f7e3c50d0a4eb38e9d8b3f0764dc4d8
+        System.out.println("Entrando a ColaboradorDao");
+        try {
+            entityManager.merge(colaborador);
+            System.out.println("Se inserto el colaborador correctamente");
+        }catch(Error error){
+            System.out.println("ColaboradorDaoImp Error: " + error);
+        }
     }
 }

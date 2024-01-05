@@ -2,17 +2,19 @@
 
 async function registrarColaborador(){
     let datos = {};
-    datos.nombre = document.getElementById("txtNombreReg").value;
-    datos.apellido = document.getElementById("txtApellidoReg").value;
-    datos.email = document.getElementById("txtEmailReg").value;
-    datos.password = document.getElementById("txtPasswordReg").value;
+    datos.nombreColab = document.getElementById("txtNombreReg").value;
+    datos.apellidoPatColab = document.getElementById("txtApellidoReg").value;
+    datos.emailColab = document.getElementById("txtEmailReg").value;
+    datos.pwdColab = document.getElementById("txtPasswordReg").value;
     let txtRepetirPassword = document.getElementById("txtRepetirPasswordReg").value;
 
-    if(datos.password !== txtRepetirPassword){
+
+    if( datos.pwdColab !== txtRepetirPassword){
         alert("Las contraseñas son diferentes");
         return;
     }
-    const request = await fetch('api/colaborador', {
+    console.log(JSON.stringify(datos))
+    const request = await fetch('api/Colaborador', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -20,7 +22,8 @@ async function registrarColaborador(){
             },
             body: JSON.stringify(datos)
           }).then(response => {
+
             alert("Usuario registrado exitosamente");
-            window.location.href = 'index.html';
-          })
+            //window.location.href = 'index.html';
+          }).catch(error => console.log("Error: ", error))
 }
