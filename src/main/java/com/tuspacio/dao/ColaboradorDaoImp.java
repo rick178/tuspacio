@@ -31,4 +31,16 @@ public class ColaboradorDaoImp implements ColaboradorDao{
             System.out.println("ColaboradorDaoImp Error: " + error);
         }
     }
+    @Override
+    public boolean verificarCredenciales(Colaborador colaborador){
+        String query = "FROM Colaborador WHERE emailColab = :email  AND pwdColab = :password";
+        List<Colaborador> listColab = entityManager.createQuery(query)
+                .setParameter("email", colaborador.getEmailColab())
+                .setParameter("password", colaborador.getPwdColab())
+                .getResultList();
+        System.out.println(colaborador.getEmailColab());
+        System.out.println(colaborador.getPwdColab());
+        System.out.println(listColab);
+        return !listColab.isEmpty();
+    }
 }

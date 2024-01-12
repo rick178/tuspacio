@@ -24,6 +24,16 @@ async function registrarColaborador(){
           }).then(response => {
 
             alert("Usuario registrado exitosamente");
+            cleanInputs("divUser");
             //window.location.href = 'index.html';
           }).catch(error => console.log("Error: ", error))
+}
+
+function cleanInputs (div){
+    let divToClean = document.getElementById(div);
+    let inputsDiv = divToClean.querySelectorAll('input');
+
+    for(var i=0; i<inputsDiv.length; i++){
+        inputsDiv[i].value="";
+    }
 }

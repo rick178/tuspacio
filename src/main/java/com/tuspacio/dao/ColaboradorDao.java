@@ -8,4 +8,6 @@ public interface ColaboradorDao {
 
      List<Colaborador> getColaborador ();
      void registrarColaborador (Colaborador colaborador);
+
+     boolean verificarCredenciales(Colaborador colaborador);
 }
