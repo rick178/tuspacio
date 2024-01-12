@@ -31,6 +31,7 @@ public class ColaboradorDaoImp implements ColaboradorDao{
             System.out.println("ColaboradorDaoImp Error: " + error);
         }
     }
+
     @Override
     public boolean verificarCredenciales(Colaborador colaborador){
         String query = "FROM Colaborador WHERE emailColab = :email  AND pwdColab = :password";
@@ -44,3 +45,6 @@ public class ColaboradorDaoImp implements ColaboradorDao{
         return !listColab.isEmpty();
     }
 }
+
+
+
